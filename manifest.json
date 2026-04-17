@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Magister-Autologin",
+  "version": "1.0",
+
+  "description": "Automatically logs into magister for you",
+  "browser_action": {
+    "default_popup": "popup/popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.magister.net/account/*"],
+      "js": ["script/autologin.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "permissions": ["storage"],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "magister-autologin@blakka",
+      "data_collection_permissions": {
+        "required": ["none"],
+        "optional": []
+      }
+    }
+  }
+}
