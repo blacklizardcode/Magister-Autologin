@@ -2,20 +2,8 @@
 
 A Firefox extension that automatically logs you into Magister.
 
-## ⚠️ SECURITY WARNING
-
-**This extension is NOT available on the Firefox Add-ons Store** because it stores credentials in plaintext, which violates Mozilla's Firefox Add-ons terms of service.
-
-**USING THIS EXTENSION IS AT YOUR OWN RISK.** The username and password you store are saved in plaintext in browser local storage and are vulnerable to:
-- Malware and unauthorized browser extensions
-- Anyone with access to your computer
-- Data extraction if your browser storage is compromised
-
-Do not use this extension if:
-- You cannot accept the security risks of plaintext credential storage
-- You share your computer with other users
-- You use public or shared computers
-
+> [!CAUTION]
+> This extension is provided as-is for personal use only. The developers are not responsible for any security breaches, data loss, or other issues that may arise from using this extension. Users assume full responsibility for the risks associated with storing credentials in plaintext.
 ## Installation
 
 Since this extension is not on the Firefox Add-ons Store, you can download signed releases from the [GitHub Releases](https://github.com/blacklizardcode/Magister-Autologin/releases) page.
@@ -43,7 +31,7 @@ Alternatively, you can install from source:
 3. Click "Save Setting"
 4. Navigate to your Magister login page (https://magister.net/account/)
 5. The extension will automatically fill in your credentials and log you in
-
+6. 
 ## Project Structure
 
 - `manifest.json` - Extension configuration
@@ -51,10 +39,6 @@ Alternatively, you can install from source:
 - `popup/popup.js` - Popup functionality
 - `popup/popup.css` - Popup styling
 - `script/autologin.js` - Content script that automatically fills login credentials
-
-## Disclaimer
-
-This extension is provided as-is for personal use only. The developers are not responsible for any security breaches, data loss, or other issues that may arise from using this extension. Users assume full responsibility for the risks associated with storing credentials in plaintext.
 
 ## License
 
