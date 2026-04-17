@@ -16,10 +16,8 @@ async function fillUsername(username) {
     input.value = username;
     await input.dispatchEvent(new Event('input', { bubbles: true }));
     await input.dispatchEvent(new Event('change', { bubbles: true }));
-    console.log("inputted")
     const button = await document.getElementById("username_submit");
     if (button) {
-      console.log("clicked le button")
       await button.click();
       return true;
     } else {
