@@ -11,8 +11,9 @@ Since this extension is not on the Firefox Add-ons Store, you can download signe
 ### Quick Install (Recommended)
 
 1. Download the `.xpi` file from the [latest release](https://github.com/blacklizardcode/Magister-Autologin/releases/latest)
-2. Open Firefox and drag the `.xpi` file into your browser window
-3. Confirm the installation when prompted
+2. go to [about:addons](about:addons)
+3. click on the settings cog -> install addon from file
+4. locate and select the `magister-autologin-1.1.0.xpi` file
 
 ### Manual Installation
 
@@ -27,11 +28,11 @@ Alternatively, you can install from source:
 ## Usage
 
 1. Click the extension icon in your browser toolbar
-2. Enter your Magister username and password
+2. Enter your Magister username, password and select "enabled"
 3. Click "Save Setting"
-4. Navigate to your Magister login page (https://magister.net/account/)
+4. Navigate to your Magister login page
 5. The extension will automatically fill in your credentials and log you in
-6. 
+
 ## Project Structure
 
 - `manifest.json` - Extension configuration
