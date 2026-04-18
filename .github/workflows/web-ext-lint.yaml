@@ -1,0 +1,33 @@
+name: web-ext lint
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - .gitignore
+      - LICENCE
+      - readme.md
+      - .github/**
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install web-ext
+        run: npm install --global web-ext
+
+      - name: Run web-ext lint
+        run: web-ext lint
