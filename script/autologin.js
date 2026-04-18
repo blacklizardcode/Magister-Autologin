@@ -1,10 +1,12 @@
 async function getCredentials() {
   const data = await browser.storage.local.get([
+    "magister-autologin-enabled",
     "magister-autologin-username",
     "magister-autologin-password"
   ]);
 
   return {
+    enabled: data["magister-autologin-enabled"] || "",
     username: data["magister-autologin-username"] || "",
     password: data["magister-autologin-password"] || ""
   };
@@ -78,11 +80,15 @@ async function fillPassword(password) {
 
 
 (async () => {
-  const { username, password } = await getCredentials();
+  const {enabled,  username, password } = await getCredentials();
+
+  if (!enabled) {
+    return;
+  }
 
   const usernameInput = await waitForElement('#username');
   const usernameFilled = await fillUsername(username);
-  
+
   const passwordInput = await waitForElement('#password');
   const passwordFilled = await fillPassword(password);
 

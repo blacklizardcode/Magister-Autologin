@@ -4,6 +4,20 @@ body {
   padding: 10px;
 }
 
+.enabled-input p {
+  margin: 1px;
+
+}
+
+.enabled-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
 button {
   padding: 8px 12px;
   margin-top: 10px;
