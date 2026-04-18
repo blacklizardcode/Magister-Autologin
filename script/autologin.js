@@ -10,6 +10,26 @@ async function getCredentials() {
   };
 }
 
+function waitForElement(selector) {
+  return new Promise(resolve => {
+    const el = document.querySelector(selector);
+    if (el) return resolve(el);
+
+    const observer = new MutationObserver(() => {
+      const el = document.querySelector(selector);
+      if (el) {
+        observer.disconnect();
+        resolve(el);
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  });
+}
+
 async function fillUsername(username) {
   const input = await document.querySelector('#username');
   if (input) {
@@ -19,7 +39,13 @@ async function fillUsername(username) {
     const button = await document.getElementById("username_submit");
     if (button) {
       await button.click();
-      return true;
+      setTimeout(10);
+      const button2 = await document.getElementById("username_submit");
+      if (button2 == null) {
+        return true;
+      } else {
+        return false;
+      }
     } else {
         return false;
     }
@@ -36,7 +62,13 @@ async function fillPassword(password) {
     const button = await document.getElementById("password_submit");
     if (button) {
       await button.click();
-      return true;
+      setTimeout(10);
+      const button2 = await document.getElementById("password_submit");
+      if (button2 == null) {
+        return true;
+      } else {
+        return false;
+      }
     } else {
         return false;
     }
@@ -47,7 +79,11 @@ async function fillPassword(password) {
 
 (async () => {
   const { username, password } = await getCredentials();
+
+  const usernameInput = await waitForElement('#username');
   const usernameFilled = await fillUsername(username);
+  
+  const passwordInput = await waitForElement('#password');
   const passwordFilled = await fillPassword(password);
 
   if (!usernameFilled) {
