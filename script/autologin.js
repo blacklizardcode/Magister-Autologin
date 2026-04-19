@@ -1,14 +1,32 @@
 async function getCredentials() {
+  const key = await getOrCreateCryptoKey();
   const data = await browser.storage.local.get([
     "magister-autologin-enabled",
     "magister-autologin-username",
     "magister-autologin-password"
   ]);
 
+  const storedUsername = data["magister-autologin-username"];
+  const storedPassword = data["magister-autologin-password"];
+
+  let username = "";
+  if (storedUsername && typeof storedUsername === "object" && storedUsername.iv && storedUsername.data) {
+    username = await decryptString(key, storedUsername);
+  } else if (typeof storedUsername === "string") {
+    username = storedUsername;
+  }
+
+  let password = "";
+  if (storedPassword && typeof storedPassword === "object" && storedPassword.iv && storedPassword.data) {
+    password = await decryptString(key, storedPassword);
+  } else if (typeof storedPassword === "string") {
+    password = storedPassword;
+  }
+
   return {
     enabled: data["magister-autologin-enabled"] || "",
-    username: data["magister-autologin-username"] || "",
-    password: data["magister-autologin-password"] || ""
+    username,
+    password
   };
 }
 
