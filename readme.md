@@ -3,7 +3,8 @@
 A Firefox extension that automatically logs you into Magister.
 
 > [!CAUTION]
-> This extension is provided as-is for personal use only. The developers are not responsible for any security breaches, data loss, or other issues that may arise from using this extension. Users assume full responsibility for the risks associated with storing credentials in plaintext.
+> **Security Notice:** This extension stores your Magister credentials in encrypted form. However, since the encryption key is stored locally on your device, malicious extensions or software could potentially access both your encrypted credentials and the encryption key. Please only install trusted extensions from reputable sources. This extension is provided under the GNU General Public License v3.0 (GPL-V3). The maintainers and developers disclaim all liability for any damages arising from the use of this extension.
+
 ## Installation
 
 Since this extension is not on the Firefox Add-ons Store, you can download signed releases from the [GitHub Releases](https://github.com/blacklizardcode/Magister-Autologin/releases) page.
