@@ -11,7 +11,7 @@
   "content_scripts": [
     {
       "matches": ["*://*.magister.net/account/*"],
-      "js": ["script/autologin.js"],
+      "js": ["script/sharedencryption.js", "script/autologin.js"],
       "run_at": "document_idle"
     }
   ],
