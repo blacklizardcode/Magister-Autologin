@@ -1,9 +1,14 @@
 {
   "manifest_version": 2,
   "name": "Magister-Autologin",
-  "version": "1.2.0",
+  "version": "1.2.2",
 
   "description": "Automatically logs into magister for you",
+
+  "icons": {
+    "48": "icons/Magister-Autologin.png"
+  },
+
   "browser_action": {
     "default_popup": "popup/popup.html"
   },
