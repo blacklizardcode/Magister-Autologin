@@ -25,7 +25,7 @@
 
   "browser_specific_settings": {
     "gecko": {
-      "id": "magister-autologin@blakka",
+      "id": "magister6-autologin@blakka",
       "data_collection_permissions": {
         "required": ["none"],
         "optional": []
