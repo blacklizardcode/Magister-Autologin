@@ -7,14 +7,18 @@ A Firefox extension that automatically logs you into Magister.
 
 ## Installation
 
-Since this extension is not on the Firefox Add-ons Store, you can download signed releases from the [GitHub Releases](https://github.com/blacklizardcode/Magister-Autologin/releases) page.
+### Addon Store Install (Recommended)
 
-### Quick Install (Recommended)
+You can install the addon via the [mozilla addon store](https://addons.mozilla.org/en-US/firefox/addon/magister-autologin/) this is the easiest way to install it officially
+
+### File Install 
+
+This method is for if you don't want to use the mozilla addon store or can't for some reason
 
 1. Download the `.xpi` file from the [latest release](https://github.com/blacklizardcode/Magister-Autologin/releases/latest)
 2. go to [about:addons](about:addons)
 3. click on the settings cog -> install addon from file
-4. locate and select the `magister-autologin-1.1.0.xpi` file
+4. locate and select the `magister-autologin-x.x.x.xpi` file
 
 ### Manual Installation
 
